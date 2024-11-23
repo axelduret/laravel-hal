@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletonsTest\Laravel\HAL;
+namespace ClairveillanceTest\Laravel\HAL;
 
-use ApiSkeletonsTest\Laravel\HAL\Hydrator\UserHydrator;
-use ApiSkeletonsTest\Laravel\HAL\Model\User;
+use ClairveillanceTest\Laravel\HAL\Hydrator\UserHydrator;
+use ClairveillanceTest\Laravel\HAL\Model\User;
 use DateTime;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;

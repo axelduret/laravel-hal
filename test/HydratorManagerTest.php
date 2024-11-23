@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletonsTest\Laravel\HAL;
+namespace ClairveillanceTest\Laravel\HAL;
 
 use Clairveillance\Laravel\HAL\Exception\NoHydrator;
 use Clairveillance\Laravel\HAL\Resource;
-use ApiSkeletonsTest\Laravel\HAL\Hydrator\DiHydrator;
-use ApiSkeletonsTest\Laravel\HAL\Hydrator\WildcardHydrator;
-use ApiSkeletonsTest\Laravel\HAL\Model\User;
+use ClairveillanceTest\Laravel\HAL\Hydrator\DiHydrator;
+use ClairveillanceTest\Laravel\HAL\Hydrator\WildcardHydrator;
+use ClairveillanceTest\Laravel\HAL\Model\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletonsTest\Laravel\HAL\Hydrator;
+namespace ClairveillanceTest\Laravel\HAL\Hydrator;
 
 use Clairveillance\Laravel\HAL\Hydrator;
 use Clairveillance\Laravel\HAL\Resource;

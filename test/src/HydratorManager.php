@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletonsTest\Laravel\HAL;
+namespace ClairveillanceTest\Laravel\HAL;
 
 use Clairveillance\Laravel\HAL\HydratorManager as HalHydratorManager;
 

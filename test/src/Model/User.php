@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletonsTest\Laravel\HAL\Model;
+namespace ClairveillanceTest\Laravel\HAL\Model;
 
 final class User
 {
