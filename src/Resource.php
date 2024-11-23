@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletons\Laravel\HAL;
+namespace Clairveillance\Laravel\HAL;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;

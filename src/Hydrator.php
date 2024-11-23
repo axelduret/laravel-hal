@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletons\Laravel\HAL;
+namespace Clairveillance\Laravel\HAL;
 
-use ApiSkeletons\Laravel\HAL\Contracts\HydratorContract;
-use ApiSkeletons\Laravel\HAL\Contracts\HydratorManagerContract;
+use Clairveillance\Laravel\HAL\Contracts\HydratorContract;
+use Clairveillance\Laravel\HAL\Contracts\HydratorManagerContract;
 
 abstract class Hydrator implements HydratorContract
 {

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace ApiSkeletonsTest\Laravel\HAL;
 
-use ApiSkeletons\Laravel\HAL\Exception\InvalidProperty;
-use ApiSkeletons\Laravel\HAL\Link;
+use Clairveillance\Laravel\HAL\Exception\InvalidProperty;
+use Clairveillance\Laravel\HAL\Link;
 use PHPUnit\Framework\TestCase;
 
 final class LinkTest extends TestCase

@@ -1,8 +1,12 @@
 {
+    "name": "axelduret/laravel-hal",
+    "description": "Hypertext Application Language for Laravel",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Tom H Anderson",
-            "email": "tom.h.anderson@gmail.com"
+            "name": "Clairveillance",
+            "email": "info@clairveillance.com"
         }
     ],
     "require": {
@@ -12,8 +16,8 @@
     },
     "autoload": {
         "psr-4": {
-            "ApiSkeletons\\Laravel\\HAL\\": "src/",
-            "ApiSkeletonsTest\\Laravel\\HAL\\": "test/src/"
+            "Clairveillance\\Laravel\\HAL\\": "src/",
+            "ClairveillanceTest\\Laravel\\HAL\\": "test/src/"
         }
     },
     "require-dev": {

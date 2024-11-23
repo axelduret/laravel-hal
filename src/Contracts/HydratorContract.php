@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletons\Laravel\HAL\Contracts;
+namespace Clairveillance\Laravel\HAL\Contracts;
 
-use ApiSkeletons\Laravel\HAL\Resource;
+use Clairveillance\Laravel\HAL\Resource;
 
 interface HydratorContract
 {

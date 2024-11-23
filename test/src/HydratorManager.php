@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiSkeletonsTest\Laravel\HAL;
 
-use ApiSkeletons\Laravel\HAL\HydratorManager as HalHydratorManager;
+use Clairveillance\Laravel\HAL\HydratorManager as HalHydratorManager;
 
 final class HydratorManager extends HalHydratorManager
 {

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace ApiSkeletonsTest\Laravel\HAL\Hydrator;
 
-use ApiSkeletons\Laravel\HAL\Hydrator;
-use ApiSkeletons\Laravel\HAL\Resource;
+use Clairveillance\Laravel\HAL\Hydrator;
+use Clairveillance\Laravel\HAL\Resource;
 use Illuminate\Foundation\Application;
 
 use function get_class;

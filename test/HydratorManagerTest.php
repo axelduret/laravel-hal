@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace ApiSkeletonsTest\Laravel\HAL;
 
-use ApiSkeletons\Laravel\HAL\Exception\NoHydrator;
-use ApiSkeletons\Laravel\HAL\Resource;
+use Clairveillance\Laravel\HAL\Exception\NoHydrator;
+use Clairveillance\Laravel\HAL\Resource;
 use ApiSkeletonsTest\Laravel\HAL\Hydrator\DiHydrator;
 use ApiSkeletonsTest\Laravel\HAL\Hydrator\WildcardHydrator;
 use ApiSkeletonsTest\Laravel\HAL\Model\User;

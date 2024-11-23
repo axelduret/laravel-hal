@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletons\Laravel\HAL\Exception;
+namespace Clairveillance\Laravel\HAL\Exception;
 
 use Exception;
 

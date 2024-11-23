@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ApiSkeletons\Laravel\HAL;
+namespace Clairveillance\Laravel\HAL;
 
-use ApiSkeletons\Laravel\HAL\Contracts\HydratorManagerContract;
+use Clairveillance\Laravel\HAL\Contracts\HydratorManagerContract;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
