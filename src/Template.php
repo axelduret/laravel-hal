@@ -59,16 +59,16 @@ class Template
     /** @param mixed $definition */
     protected function setDefinition($definition): self
     {
-        if (! is_array($definition)) {
+        if (!is_array($definition)) {
             throw new Exception\InvalidProperty('Definition must be an array');
         }
 
-        if (! in_array('method', array_keys($definition))) {
+        if (!in_array('method', array_keys($definition))) {
             throw new Exception\InvalidProperty("'method' is required");
         }
 
         foreach ($definition as $property => $value) {
-            if (! in_array($property, $this->properties)) {
+            if (!in_array($property, $this->properties)) {
                 throw new Exception\InvalidProperty("'" . $property . "' is an invalid property name");
             }
 
@@ -81,19 +81,12 @@ class Template
             }
         }
 
-        return $this;
-    }
-
-    public function toArray(): array
-    {
-        $definition = $this->definition;
-
         if (!empty($this->propertiesList)) {
-            $definition['properties'] = array_map(function ($property) {
+            $this->definition['properties'] = array_map(function ($property) {
                 return $property->toArray();
             }, $this->propertiesList);
         }
 
-        return $definition;
+        return $this;
     }
 }
