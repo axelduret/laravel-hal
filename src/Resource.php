@@ -26,6 +26,9 @@ class Resource
     /** @var mixed[] */
     protected array $paginationData = [];
 
+    /** @var Template[] */
+    protected array $templates = [];
+
     private Contracts\HydratorManagerContract $hydratorManager;
 
     public function setHydratorManager(Contracts\HydratorManagerContract $hydratorManager): self
@@ -59,6 +62,14 @@ class Resource
     public function addLink(string $reference, $definition): self
     {
         array_push($this->links, new Link($reference, $definition));
+
+        return $this;
+    }
+
+    /** @param mixed[] $definition */
+    public function addTemplate(string $key, array $definition): self
+    {
+        $this->templates[$key] = new Template($key, $definition);
 
         return $this;
     }
@@ -133,6 +144,10 @@ class Resource
 
         if ($this->paginationData) {
             $data = array_merge($data, $this->paginationData);
+        }
+
+        foreach ($this->templates as $template) {
+            $data['_templates'][$template->getReference()] = $template->getDefinition();
         }
 
         return $data;
