@@ -66,10 +66,9 @@ class Resource
         return $this;
     }
 
-    /** @param mixed[] $definition */
-    public function addTemplate(string $key, array $definition): self
+    public function addTemplate(array $definition, ?string $reference ='default'): self
     {
-        $this->templates[$key] = new Template($key, $definition);
+        array_push($this->templates, new Template($reference, $definition));
 
         return $this;
     }
@@ -119,11 +118,15 @@ class Resource
     {
         $data = [];
 
+        $data = array_merge($data, $this->state);
+
+        if ($this->paginationData) {
+            $data = array_merge($data, $this->paginationData);
+        }
+
         foreach ($this->links as $link) {
             $data['_links'][$link->getReference()] = $link->getDefinition();
         }
-
-        $data = array_merge($data, $this->state);
 
         if ($this->embedded) {
             $data['_embedded'] = [];
@@ -140,10 +143,6 @@ class Resource
                     $data['_embedded'][$ref] = $resources->toArray();
                 }
             }
-        }
-
-        if ($this->paginationData) {
-            $data = array_merge($data, $this->paginationData);
         }
 
         foreach ($this->templates as $template) {

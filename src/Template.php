@@ -11,6 +11,8 @@ use function is_array;
 class Template
 {
     /**
+     * See https://rwcbook.github.io/hal-forms
+     * 
      * @var array<string> $properties
      */
     private array $properties = [
@@ -25,6 +27,9 @@ class Template
 
     /** @var array<mixed> $definition */
     protected array $definition;
+
+    /** @var Property[] $properties */
+    protected array $propertiesList = [];
 
     /** @param mixed $definition */
     public function __construct(string $reference, $definition)
@@ -67,11 +72,13 @@ class Template
                 throw new Exception\InvalidProperty("'" . $property . "' is an invalid property name");
             }
 
-            if ($property === 'properties' && ! is_array($value)) {
-                throw new Exception\InvalidProperty('Properties must be an array');
+            if ($property === 'properties' && is_array($value)) {
+                foreach ($value as $prop) {
+                    $this->propertiesList[] = new Property($prop);
+                }
+            } else {
+                $this->definition[$property] = $value;
             }
-
-            $this->definition[$property] = $value;
         }
 
         return $this;
@@ -79,6 +86,14 @@ class Template
 
     public function toArray(): array
     {
-        return $this->definition;
+        $definition = $this->definition;
+
+        if (!empty($this->propertiesList)) {
+            $definition['properties'] = array_map(function ($property) {
+                return $property->toArray();
+            }, $this->propertiesList);
+        }
+
+        return $definition;
     }
 }
