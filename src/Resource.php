@@ -12,7 +12,7 @@ use function array_push;
 use function is_array;
 use function is_null;
 
-class Resource
+final class Resource
 {
     /** @var mixed[] */
     protected array $state = [];

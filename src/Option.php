@@ -8,7 +8,7 @@ use function array_keys;
 use function in_array;
 use function is_array;
 
-class Option
+final class Option
 {
     /**
      * @var array<string> $attributes

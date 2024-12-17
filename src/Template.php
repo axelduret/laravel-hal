@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace ApiSkeletons\Laravel\HAL;
 
+use ApiSkeletons\Laravel\HAL\Enum\HttpMethods;
+
 use function array_keys;
 use function in_array;
 use function is_array;
 
-class Template
+final class Template
 {
     /**
      * See https://rwcbook.github.io/hal-forms
@@ -70,6 +72,13 @@ class Template
         foreach ($definition as $property => $value) {
             if (!in_array($property, $this->properties)) {
                 throw new Exception\InvalidProperty("'" . $property . "' is an invalid property name");
+            }
+
+            if($property === 'method'){
+                if(!in_array($value, HttpMethods::cases())){
+                    throw new Exception\InvalidProperty(sprintf("'method' must be one of %s", implode(', ', HttpMethods::cases())));
+                }
+                $value = $value->value;
             }
 
             if ($property === 'properties' && is_array($value)) {

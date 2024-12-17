@@ -6,7 +6,7 @@ namespace ApiSkeletons\Laravel\HAL\Exception;
 
 use Exception;
 
-class NoHydrator extends Exception
+final class NoHydrator extends Exception
 {
     /**
      * {@inheritDoc}

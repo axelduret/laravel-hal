@@ -8,7 +8,7 @@ use function array_keys;
 use function in_array;
 use function is_array;
 
-class Property
+final class Property
 {
     /**
      * @var array<string> $coreAttributes

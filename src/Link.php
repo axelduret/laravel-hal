@@ -8,7 +8,7 @@ use function array_keys;
 use function in_array;
 use function is_array;
 
-class Link
+final class Link
 {
     /**
      * See https://tools.ietf.org/html/draft-kelly-json-hal-08#section-5

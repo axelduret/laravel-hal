@@ -6,6 +6,6 @@ namespace ApiSkeletons\Laravel\HAL\Exception;
 
 use Exception;
 
-class InvalidProperty extends Exception
+final class InvalidProperty extends Exception
 {
 }
