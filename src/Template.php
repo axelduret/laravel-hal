@@ -69,9 +69,9 @@ final class Template
             throw new Exception\InvalidProperty("'method' is required");
         }
 
-        $validMethods = array_map(fn($method) => $method, HttpMethods::cases());
+        $validMethods = array_map(fn ($method) => $method->value, HttpMethods::cases());
 
-        if (! in_array($definition['method'], $validMethods)) {
+        if (!in_array($definition['method'], HttpMethods::cases())) {
             throw new Exception\InvalidProperty(sprintf("'method' must be one of %s", implode(', ', $validMethods)));
         }
 
