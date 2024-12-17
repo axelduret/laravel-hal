@@ -69,6 +69,12 @@ final class Template
             throw new Exception\InvalidProperty("'method' is required");
         }
 
+        $validMethods = array_map(fn($method) => $method->value, HttpMethods::cases());
+
+        if (! in_array($definition['method'], $validMethods)) {
+            throw new Exception\InvalidProperty(sprintf("'method' must be one of %s", implode(', ', $validMethods)));
+        }
+
         foreach ($definition as $property => $value) {
             if (!in_array($property, $this->properties)) {
                 throw new Exception\InvalidProperty("'" . $property . "' is an invalid property name");
