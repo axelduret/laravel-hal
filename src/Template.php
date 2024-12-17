@@ -72,7 +72,11 @@ final class Template
         $validMethods = array_map(fn ($method) => $method->value, HttpMethods::cases());
 
         if (!in_array($definition['method'], HttpMethods::cases())) {
-            throw new Exception\InvalidProperty(sprintf("'method' must be one of %s", implode(', ', $validMethods)));
+            throw new Exception\InvalidProperty(sprintf(
+                "'method' must use the %s enum to specify one of the valid HTTP methods: %s.",
+                HttpMethods::class,
+                implode(', ', $validMethods)
+            ));
         }
 
         foreach ($definition as $property => $value) {
