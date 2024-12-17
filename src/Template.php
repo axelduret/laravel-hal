@@ -85,9 +85,6 @@ final class Template
             }
 
             if($property === 'method'){
-                if(!in_array($value, HttpMethods::cases())){
-                    throw new Exception\InvalidProperty(sprintf("'method' must be one of %s", implode(', ', HttpMethods::cases())));
-                }
                 $value = $value->value;
             }
 

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace ApiSkeletons\Laravel\HAL;
 
+use function is_null;
+use function is_array;
+use function array_push;
+use function array_merge;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
-
-use function array_merge;
-use function array_push;
-use function is_array;
-use function is_null;
+use ApiSkeletons\Laravel\HAL\Enum\HttpMethods;
 
 final class Resource
 {
@@ -65,8 +65,9 @@ final class Resource
 
         return $this;
     }
-
-    public function addTemplate(array $definition, ?string $reference ='default'): self
+    
+    /** @param array{method:HttpMethods,contentType:string,target:string,title:string,properties:array{name:string,prompt:string,readOnly:bool,regex:string,required:bool,templated:bool,value:mixed,cols:int,max:int,maxLength:int,min:int,minLength:int,placeholder:string,rows:int,step:int,type:string,options:array{inline:array,link:array,maxItems:int,minItems:int,promptField:string,valueField:string,selectedValues:array}}} $definition */
+    public function addTemplates(array $definition, ?string $reference ='default'): self
     {
         array_push($this->templates, new Template($reference, $definition));
 

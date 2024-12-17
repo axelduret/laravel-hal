@@ -19,6 +19,7 @@ final class Option
         'maxItems',
         'minItems',
         'promptField',
+        'valueField',
         'selectedValues',
     ];
 
